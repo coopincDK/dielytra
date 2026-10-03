@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dielytra – et lille hjemmelavet spillested</title>
+  <meta name="description" content="Dielytra er et lille hjemmelavet spillested med browserspil.">
+  <style>
+    :root { --bg:#14121c; --kort:#1f1b2b; --tekst:#f2eefb; --dim:#a79fbd; --accent:#ffb347; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; padding:24px 16px;
+           background:radial-gradient(circle at 30% 20%, #2a2140, var(--bg) 60%);
+           color:var(--tekst); font-family:system-ui, -apple-system, "Segoe UI", sans-serif; }
+    main { width:100%; max-width:560px; background:var(--kort); border-radius:18px;
+           padding:36px 28px; box-shadow:0 20px 60px rgba(0,0,0,.45); }
+    h1 { margin:0 0 6px; font-size:2.4rem; letter-spacing:.02em; }
+    h1 span { color:var(--accent); }
+    .tag { margin:0 0 24px; color:var(--dim); }
+    h2 { font-size:1.1rem; margin:28px 0 10px; }
+    ul.spil { list-style:none; padding:0; margin:0; }
+    ul.spil li a { display:block; padding:12px 14px; margin-bottom:8px; border-radius:10px;
+                   background:#2a2540; color:var(--tekst); text-decoration:none; }
+    ul.spil li a:hover { background:#352e52; }
+    .tom { color:var(--dim); font-style:italic; }
+    footer { margin-top:32px; font-size:.85rem; color:var(--dim); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Dielytra<span>.</span></h1>
+    <p class="tag">Et lille hjemmelavet spillested med browserspil – spil direkte i browseren, ingen installation.</p>
+
+    <h2>Spil</h2>
+    <!-- Tilføj spil her, fx: <li><a href="/spil/mit-spil/">Mit spil</a></li> -->
+    <ul class="spil" id="spilliste"></ul>
+    <p class="tom" id="tom">Der er ingen spil endnu – de første er på vej.</p>
+
+    <footer>&copy; <span id="aar">2026</span> Dielytra</footer>
+  </main>
+  <script>
+    document.getElementById('aar').textContent = new Date().getFullYear();
+    if (document.querySelectorAll('#spilliste li').length) document.getElementById('tom').hidden = true;
+  </script>
+</body>
+</html>
